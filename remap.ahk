@@ -59,3 +59,103 @@ Space::Send "{Space}"
 
 NumpadMult::Send "{vk1Dsc07B}"
 NumpadDiv::Send "{vk1Csc079}"
+
+<*o::
+$o::
+{
+    if (KeyWait("o", "T0.2")) {
+        Send "{o}"
+    }
+    else {
+        Send "{LShift down}"
+        KeyWait "o"
+        Send "{LShift up}"
+    }
+}
+
+<*a::
+$a::
+{
+    if (KeyWait("a", "T0.2")) {
+        Send "{a}"
+    }
+    else {
+        Send "{LAlt down}"
+        KeyWait "a"
+        Send "{LAlt up}"
+    }
+}
+
+<*i::
+$i::
+{
+    if (KeyWait("i", "T0.2")) {
+        Send "{i}"
+    }
+    else {
+        Send "{LCtrl down}"
+        KeyWait "i"
+        Send "{LCtrl up}"
+    }
+}
+
+$e::
+{
+    if (KeyWait("e", "T0.2")) {
+        Send "{e}"
+    }
+    else {
+        Send "{Enter}"
+        KeyWait "e"
+    }
+}
+
+>*t::
+$t::
+{
+    if (KeyWait("t", "T0.2")) {
+        Send "{t}"
+    }
+    else {
+        Send "{RShift down}"
+        KeyWait "t"
+        Send "{RShift up}"
+    }
+}
+
+>*n::
+$n::
+{
+    if (KeyWait("n", "T0.2")) {
+        Send "{n}"
+    }
+    else {
+        Send "{RAlt down}"
+        KeyWait "n"
+        Send "{RAlt up}"
+    }
+}
+
+>*s::
+$s::
+{
+    if (KeyWait("s", "T0.2")) {
+        Send "{s}"
+    }
+    else {
+        Send "{RCtrl down}"
+        KeyWait "s"
+        Send "{RCtrl up}"
+    }
+}
+
+$h::
+{
+    if (KeyWait("h", "T0.2")) {
+        Send "{h}"
+    }
+    else {
+        Send "{Tab}"
+        KeyWait "h"
+    }
+}
