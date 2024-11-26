@@ -25,7 +25,8 @@ BS & d::Send "{!}"
 BS & m::Send "{?}"
 BS & j::Send "{:}"
 BS & b::Send "{;}"
-BS::Send "{BS}"
+*BS::Send "{BS}"
+
 Space & l::Send "{[}"
 Space & u::Send '{"}'
 Space & f::Send "{]}"
@@ -55,107 +56,79 @@ Space & d::Send "{Home}"
 Space & j::Send "{End}"
 ; Space & b::Send "{}"
 Space & BS::Send "{Del}"
-Space::Send "{Space}"
+*Space::Send "{Space}"
 
 NumpadMult::Send "{vk1Dsc07B}"
 NumpadDiv::Send "{vk1Csc079}"
 
-<*o::
-$o::
+*o::
 {
     if (KeyWait("o", "T0.2")) {
         Send "{o}"
     }
     else {
-        Send "{LShift down}"
+        Send "{Shift down}"
         KeyWait "o"
-        Send "{LShift up}"
+        Send "{Shift up}"
     }
 }
 
-<*a::
-$a::
+*a::
 {
     if (KeyWait("a", "T0.2")) {
         Send "{a}"
     }
     else {
-        Send "{LAlt down}"
+        Send "{Alt down}"
         KeyWait "a"
-        Send "{LAlt up}"
+        Send "{Alt up}"
     }
 }
 
-<*i::
-$i::
+*i::
 {
     if (KeyWait("i", "T0.2")) {
         Send "{i}"
     }
     else {
-        Send "{LCtrl down}"
+        Send "{Ctrl down}"
         KeyWait "i"
-        Send "{LCtrl up}"
+        Send "{Ctrl up}"
     }
 }
 
-$e::
-{
-    if (KeyWait("e", "T0.2")) {
-        Send "{e}"
-    }
-    else {
-        Send "{Enter}"
-        KeyWait "e"
-    }
-}
-
->*t::
-$t::
+*t::
 {
     if (KeyWait("t", "T0.2")) {
         Send "{t}"
     }
     else {
-        Send "{RShift down}"
+        Send "{Shift down}"
         KeyWait "t"
-        Send "{RShift up}"
+        Send "{Shift up}"
     }
 }
 
->*n::
-$n::
+*n::
 {
     if (KeyWait("n", "T0.2")) {
         Send "{n}"
     }
     else {
-        Send "{RAlt down}"
+        Send "{Alt down}"
         KeyWait "n"
-        Send "{RAlt up}"
+        Send "{Alt up}"
     }
 }
 
->*s::
-$s::
+*s::
 {
     if (KeyWait("s", "T0.2")) {
         Send "{s}"
     }
     else {
-        Send "{RCtrl down}"
+        Send "{Ctrl down}"
         KeyWait "s"
-        Send "{RCtrl up}"
-    }
-}
-
-$h::
-{
-    if (KeyWait("h", "T0.2")) {
-        Send "{h}"
-    }
-    else {
-        Send "{Tab}"
-        KeyWait "h"
+        Send "{Ctrl up}"
     }
 }
