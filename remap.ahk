@@ -1,3 +1,9 @@
+#Requires AutoHotkey v2
+
+NumpadMult::Send "{vk1Dsc07B}"
+NumpadDiv::Send "{vk1Csc079}"
+
+#HotIf not GetKeyState("Ins", "P")
 BS & l::Send "{1}"
 BS & u::Send "{2}"
 BS & f::Send "{3}"
@@ -25,110 +31,108 @@ BS & d::Send "{!}"
 BS & m::Send "{?}"
 BS & j::Send "{:}"
 BS & b::Send "{;}"
-*BS::Send "{BS}"
+BS::Send "{BS}"
+#HotIf
 
-Space & l::Send "{[}"
-Space & u::Send '{"}'
-Space & f::Send "{]}"
-Space & i::Send "{(}"
-Space & a::Send "{'}"
-Space & o::Send "{)}"
-Space & x::Send "{{}"
-Space & c::Send "{`}"
-Space & v::Send "{}}"
-Space & e::Send "{#}"
-Space & q::Send "{@}"
-Space & z::Send "{\}"
-Space & -::Send "{&}"
-Space & ,::Send "{|}"
-; Space & w::Send "{}"
-Space & r::Send "{Up}"
-; Space & y::Send "{}"
-; Space & k::Send "{}"
-Space & t::Send "{Left}"
-Space & n::Send "{Down}"
-Space & s::Send "{Right}"
-; Space & h::Send "{}"
-; Space & p::Send "{}"
-; Space & g::Send "{}"
-Space & d::Send "{Home}"
-; Space & m::Send "{}"
-Space & j::Send "{End}"
-; Space & b::Send "{}"
-Space & BS::Send "{Del}"
-*Space::Send "{Space}"
+#HotIf not GetKeyState("BS", "P")
+Ins & l::Send "{[}"
+Ins & u::Send '{"}'
+Ins & f::Send "{]}"
+Ins & i::Send "{(}"
+Ins & a::Send "{'}"
+Ins & o::Send "{)}"
+Ins & x::Send "{{}"
+Ins & c::Send "{``}"
+Ins & v::Send "{}}"
+Ins & e::Send "{#}"
+Ins & q::Send "{@}"
+Ins & z::Send "{\}"
+Ins & -::Send "{&}"
+Ins & ,::Send "{|}"
+; Ins & w::Send "{}"
+Ins & r::Send "{Up}"
+; Ins & y::Send "{}"
+Ins & k::Send "{Esc}"
+Ins & t::Send "{Left}"
+Ins & n::Send "{Down}"
+Ins & s::Send "{Right}"
+Ins & h::Send "{Tab}"
+Ins & p::Send "{Del}"
+; Ins & g::Send "{}"
+Ins & d::Send "{Home}"
+; Ins & m::Send "{}"
+Ins & j::Send "{End}"
+; Ins & b::Send "{}"
+; Ins & BS::Send "{}"
+Ins::Send "{Space}"
+#HotIf
 
-NumpadMult::Send "{vk1Dsc07B}"
-NumpadDiv::Send "{vk1Csc079}"
+#HotIf GetKeyState("BS", "P")
+Ins::Return
 
-*o::
+Ins & o::
 {
-    if (KeyWait("o", "T0.2")) {
-        Send "{o}"
-    }
-    else {
-        Send "{Shift down}"
-        KeyWait "o"
-        Send "{Shift up}"
-    }
+    Send "{LShift down}"
+    KeyWait "o"
+    Send "{LShift up}"
 }
 
-*a::
+Ins & a::
 {
-    if (KeyWait("a", "T0.2")) {
-        Send "{a}"
-    }
-    else {
-        Send "{Alt down}"
-        KeyWait "a"
-        Send "{Alt up}"
-    }
+    Send "{LAlt down}"
+    KeyWait "a"
+    Send "{LAlt up}"
 }
 
-*i::
+Ins & i::
 {
-    if (KeyWait("i", "T0.2")) {
-        Send "{i}"
-    }
-    else {
-        Send "{Ctrl down}"
-        KeyWait "i"
-        Send "{Ctrl up}"
-    }
+    Send "{LCtrl down}"
+    KeyWait "i"
+    Send "{LCtrl up}"
 }
 
-*t::
+Ins & e::
 {
-    if (KeyWait("t", "T0.2")) {
-        Send "{t}"
-    }
-    else {
-        Send "{Shift down}"
-        KeyWait "t"
-        Send "{Shift up}"
-    }
+    Send "{LWin down}"
+    KeyWait "e"
+    Send "{LWin up}"
 }
 
-*n::
+Ins & t::
 {
-    if (KeyWait("n", "T0.2")) {
-        Send "{n}"
-    }
-    else {
-        Send "{Alt down}"
-        KeyWait "n"
-        Send "{Alt up}"
-    }
+    Send "{RShift down}"
+    KeyWait "t"
+    Send "{RShift up}"
 }
 
-*s::
+Ins & n::
 {
-    if (KeyWait("s", "T0.2")) {
-        Send "{s}"
-    }
-    else {
-        Send "{Ctrl down}"
-        KeyWait "s"
-        Send "{Ctrl up}"
-    }
+    Send "{RAlt down}"
+    KeyWait "n"
+    Send "{RAlt up}"
 }
+
+Ins & s::
+{
+    Send "{RCtrl down}"
+    KeyWait "s"
+    Send "{RCtrl up}"
+}
+
+Ins & h::
+{
+    Send "{RWin down}"
+    KeyWait "h"
+    Send "{RWin up}"
+}
+#HotIf
+
+*<+o::Return
+*<!a::Return
+*<^i::Return
+*<#e::Return
+
+*>+t::Return
+*>!n::Return
+*>^s::Return
+*>#h::Return
